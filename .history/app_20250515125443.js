@@ -65,9 +65,9 @@ const sessionOptions = {
         maxAge :  7 * 24 * 60 * 60 * 1000,
     },    
 }
-app.get("/", (req,res) => {
-    res.send("Hi, I am the root");
-})
+// app.get("/", (req,res) => {
+//     res.send("Hi, I am the root");
+// })
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -85,13 +85,58 @@ app.use((req, res, next) =>{
     res.locals.currUser = req.user;
     next();
 })
-
+app.use("/listings/Trending", 
+app.use("/listings/Rooms", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Rooms.ejs",{allListings});
+})
+app.use("/listings/IconicCity", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/IconicCity.ejs",{allListings});
+})
+app.use("/listings/Mountains", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Mountains.ejs",{allListings});
+})
+app.use("/listings/Castles", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Castles.ejs",{allListings});
+})
+app.use("/listings/AmazingPools", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/AmazingPools.ejs",{allListings});
+})
+app.use("/listings/Camping", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Camping.ejs",{allListings});
+})
+app.use("/listings/Arctic", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Arctic.ejs",{allListings});
+})
+app.use("/listings/Domes", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Domes.ejs",{allListings});
+})
+app.use("/listings/Boats", async(req,res) => {
+    const allListings = await Listing.find({});
+    res.render("filters/Boats.ejs",{allListings});
+})
 app.use("/listings", listing);
 app.use("/listing", listing);
 
 app.use("/listings/:id/reviews", reviews);
 app.use("/", userRouter);
 
+
+// app.get("/demoUser", async (req,res) =>{
+//     let fakeUser = new user({
+//         email:"student@gmail.com",
+//         username : "delta$tudent",
+//     });
+//     let registeredUser = await user.register(fakeUser,"student");
+//     res.send(registeredUser);
+// })
    
 app.use((err,req,res,next) => {
     let {statusCode = 400, message = "something wrong"} = err;

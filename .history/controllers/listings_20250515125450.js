@@ -76,39 +76,3 @@ module.exports.Trending = async(req,res) => {
     const allListings = await Listing.find({});
     res.render("filters/Trending.ejs",{allListings});
 }
-module.exports.Rooms = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Rooms.ejs",{allListings});
-}
-module.exports.IconicCity =  async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/IconicCity.ejs",{allListings});
-}
-module.exports.Mountains = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Mountains.ejs",{allListings});
-}
-module.exports.Castles = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Castles.ejs",{allListings});
-}
-module.exports.AmazingPools = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/AmazingPools.ejs",{allListings});
-}
-module.exports.Camping = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Camping.ejs",{allListings});
-}
-module.exports.Arctic =  async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Arctic.ejs",{allListings});
-}
-module.exports.Domes = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Domes.ejs",{allListings});
-}
-module.exports.Boats = async(req,res) => {
-    const allListings = await Listing.find({});
-    res.render("filters/Boats.ejs",{allListings});
-}

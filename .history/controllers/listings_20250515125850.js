@@ -111,4 +111,4 @@ module.exports.Domes = async(req,res) => {
 module.exports.Boats = async(req,res) => {
     const allListings = await Listing.find({});
     res.render("filters/Boats.ejs",{allListings});
-}
+})

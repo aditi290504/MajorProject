@@ -26,16 +26,7 @@ router.route("/").get( ListingController.index).post(isLoggedIn,upload.single("l
 //new route
 router.get("/new", isLoggedIn, ListingController.newRoute);
 
-router.route("/Trending", ListingController.Trending)
-router.route("/Rooms", ListingController.Rooms)
-router.route("/IconicCity", ListingController.IconicCity)
-router.route("/Mountains", ListingController.Mountains)
-router.route("/Castles", ListingController.Castles)
-router.route("/AmazingPools", ListingController.AmazingPools)
-router.route("/Camping", ListingController.Camping)
-router.route("/Arctic", ListingController.Arctic)
-router.route("/Domes", ListingController.Domes)
-router.route("/Boats", ListingController.Boats)
+router.route()
 
 router.route("/:id").get(wrapAsync(ListingController.showRoute)).put(upload.single("listing[image]"), wrapAsync(ListingController.update)).delete(isOwner, ListingController.deleteRoute);
 

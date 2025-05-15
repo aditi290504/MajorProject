@@ -34,8 +34,7 @@ router.route("/Castles", ListingController.Castles)
 router.route("/AmazingPools", ListingController.AmazingPools)
 router.route("/Camping", ListingController.Camping)
 router.route("/Arctic", ListingController.Arctic)
-router.route("/Domes", ListingController.Domes)
-router.route("/Boats", ListingController.Boats)
+router.route("/Domes", ListingController.Camping)
 
 router.route("/:id").get(wrapAsync(ListingController.showRoute)).put(upload.single("listing[image]"), wrapAsync(ListingController.update)).delete(isOwner, ListingController.deleteRoute);
 
