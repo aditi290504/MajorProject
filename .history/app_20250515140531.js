@@ -84,7 +84,7 @@ app.use((req, res, next) =>{
     next();
 })
 app.use("/", (req,res) => {
-    res.render("index.ejs")
+    res.render("")
 })
 app.use("/listings", listing);
 app.use("/listing", listing);

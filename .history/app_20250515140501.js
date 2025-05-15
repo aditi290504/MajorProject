@@ -25,7 +25,6 @@ const Listing = require('./models/listing.js');
 
 const dbUrl = process.env.ATLAS_URL;
 const PORT = process.env.PORT || 3030;
-
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended:true}));
@@ -84,7 +83,7 @@ app.use((req, res, next) =>{
     next();
 })
 app.use("/", (req,res) => {
-    res.render("index.ejs")
+    res.redirect("/listings")
 })
 app.use("/listings", listing);
 app.use("/listing", listing);
