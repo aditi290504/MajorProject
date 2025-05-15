@@ -83,7 +83,7 @@ app.use((req, res, next) =>{
     next();
 })
 app.use("/", (req,res) => {
-    res.redirect("/listings")
+    res.ri
 })
 app.use("/listings", listing);
 app.use("/listing", listing);

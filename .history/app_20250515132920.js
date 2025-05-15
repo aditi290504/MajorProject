@@ -82,9 +82,7 @@ app.use((req, res, next) =>{
     res.locals.currUser = req.user;
     next();
 })
-app.use("/", (req,res) => {
-    res.redirect("/listings")
-})
+app.use
 app.use("/listings", listing);
 app.use("/listing", listing);
 
