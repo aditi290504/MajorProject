@@ -1,0 +1,11 @@
+const joi = require("joi");
+
+const listingSchema = joi.object({
+    listing : joi.object({
+        title: joi.string().required(),
+        description: joi.string().required(),
+        location: joi.string().required(),
+        Country: joi.string().required(),
+
+    })
+}).required();

@@ -1,0 +1,92 @@
+<% layout("/layouts/boilerplate") %> 
+<style>
+  #filters{
+    display:flex;
+    flex-wrap:wrap;
+  }
+  .filters{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+  }
+  .filters:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+  .filters p {
+    font-size: 0.8rem;
+  }
+</style>
+<body>
+    <div id="filters" class="collapse show mt-3">
+      <div class="filters">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic city</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-chess-rook"></i></div>
+        <p>Castles</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amaizing Pool</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-tractor"></i></div>
+        <p>Farms</p>
+      </div>
+      <div class="filters">
+        <div><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+      
+      <div class="form-check form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+        <label class="form-check-label" for="switchCheckDefault">Tax added</label>
+      </div>
+    </div>
+    <div class="row row-cols-lg-3 row-col-md-2 row-col-sm-1">
+        <% for(let listing of allListings){ %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card-listing">
+                    <img src="<%= listing.image.url%>" class="card-img-top" alt="listing img" style="height: 18rem;">
+                    
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%= listing.title %></b><br>
+                        &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> / night 
+                        <i >&nbsp; &nbsp; +18% GST</i>
+                      </p>
+                    </div>
+                  </div>
+            </a>
+        <%} %>
+    </div>
+</body>
+
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.
+  })
+</script>
+
+
+

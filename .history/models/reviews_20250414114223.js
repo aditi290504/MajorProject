@@ -1,0 +1,9 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const reviewSchema = new Schema({
+    Comment : String,
+    rating : {
+        type
+    }
+})
